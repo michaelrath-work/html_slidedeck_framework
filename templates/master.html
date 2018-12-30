@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Presentation</title>
+
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+        {% for slide in slides %}
+          {% set post_loop = loop %}
+          <!-- BEGIN {{ slide }} -->
+          <section>
+          {% include [slide] %}
+          </section>
+          <!-- END {{ slide }} -->
+        {% endfor %}
+    </div>
+  </div>
+
+  {% include 'scripts.html' %}
+</body>
+</html>
