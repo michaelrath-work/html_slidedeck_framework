@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,17 +15,14 @@
 <body>
   <div class="reveal">
     <div class="slides">
-        {% for slide in slides %}
-          {% set post_loop = loop %}
-          <!-- BEGIN {{ slide }} -->
-          <section>
-          {% include [slide] %}
-          </section>
-          <!-- END {{ slide }} -->
-        {% endfor %}
+
+        {{> ./slides/slide1.html}}
+
+        {{> ./slides/slide2.html}}
+
     </div>
   </div>
 
-  {% include 'scripts.html' %}
+  {{> ./templates/scripts.html}}
 </body>
 </html>
