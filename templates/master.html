@@ -7,19 +7,47 @@
   <title>My Presentation</title>
 
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
-  <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
 
   <!-- Theme used for syntax highlighting of code -->
   <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+  <!-- local styles-->
+  <link rel="stylesheet" href="style/extra.css">
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
-        {{> ./slides/slide1.html}}
+        <section>
+          <h1><a href="https://github.com/tests-always-included/mo" target="#">Mo</a> template structure</h1>
+          Modify <span style="font-family: 'Courier New', Courier, monospace">master.html</span> to include/exclude slides
+          <pre><code class="bash">
+# include file
+&#x007b&#x007b> slides/slide1.html &#x007d&#x007d
+
+# exclude files
+&#x007b&#x007b!> slides/other.html &#x007d&#x007d
+          </code></pre>
+        </section>
+
+        {{!> ./slides/slide1.html}}
 
         {{> ./slides/slide2.html}}
 
+        {{> ./slides/image_overlay.html}}
+
+        <section>
+          <section>
+            <h1>Column Layouts</h1>
+          </section>
+
+          {{> ./slides/layout_flex.html}}
+
+          {{> ./slides/layout_grid.html}}
+        </section>
+
+        {{> ./slides/fixed_header_position.html}}
     </div>
   </div>
 
