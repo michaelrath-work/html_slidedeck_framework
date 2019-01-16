@@ -20,6 +20,19 @@
   <link rel="stylesheet" href="style/extra.css">
   <link rel="stylesheet" href="style/animation.css">
 
+  <!-- Printing and PDF exports
+  Howto:
+    * This feature requires that you use Google Chrome or Chromium and to be serving the presentation from a webserver.
+    * Open your presentation with print-pdf included in the query string i.e. http://localhost:8000/?print-pdf
+  -->
+  <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
 </head>
 <body>
   <div class="reveal">
