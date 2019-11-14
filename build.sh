@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-cat templates/master.html | ./mo.sh > presentation.html
+cat index.in.html | ./mo.sh > index.html
